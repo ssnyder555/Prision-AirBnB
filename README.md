@@ -22,5 +22,12 @@ Can they fit more in?
 - MongoDB and Mongoose
 
 ## Example Routes
+- this is where we would put this....
+- maybe another here......
+- the last one here. forsure.....
 
-## MVP User Stories 
+
+## MVP User Stories
+- "I Love this app!!!!",
+- "I use this every time I need to put another criminal away."
+- "Hacking this app was a blast! Got T-Nugs out same day!"
