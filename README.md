@@ -1,10 +1,26 @@
-This is my prison App!
+# Let Us book your next visit to Prison.
 
-The user in mind is the clerk checking the prisoners in
+## A little about the Product
 
-the relationship is between the prisoners checking in and out of the remaining cells.
+- This app help the user understand:
+How many available cells the particular prison has,
+Can they fit more in?
 
-You can add new prisoners to your index. You can edit their info on behavior, race, age, time left on sentence from the clecrk side index
+- What kind of inmate they are intaking:
+  Kind of criminal,
+  Duration of stay,
+  Can they be rehabilitated?
 
-technology used:
-node.js JavaScript HTML css express mongoose MongoDB Method-override ejs Body-Parser Bcrypt Session 
+
+## Technologies
+
+- Node.js
+- Express
+- EJS and HTML
+- CSS
+- JavaScript and JQuery
+- MongoDB and Mongoose
+
+## Example Routes
+
+## MVP User Stories 
