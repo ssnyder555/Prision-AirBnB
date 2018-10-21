@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Prisoner Information</h1>
+  <%=prisoner.name%> </br>
+  <%=prisoner.age%> </br>
+  <img src="<%=prisoner.picture%>" alt=""> </br>
+  <form action="/prisoners/<%=prisoner.id%>/edit" method="GET">
+    <input type="submit" value="EDIT PRISONER INFORMATION">
+  </form>
+  <form action="/prisoners/<%=prisoner.id%>?_method=DELETE" method="post">
+    <input type="submit" value="LET PRISONER GO">
+  </form>
+</body>
+
+</html>

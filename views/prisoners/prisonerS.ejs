@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <%    for( let i = 0; i < prisoners.length; i++ ) { %>
+  <li>
+    <%=    prisoners[i].name  %> </br>
+    <img src="<%=prisoners[i].picture%>" alt=""> </br>
+    <form action="/prisoners/new" method="get">
+      <input type="submit" value="ADMIT PRISONER">
+    </form>
+    <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
+      <input type="submit" name="" value="View Prisoner">
+    </form>
+  </li>
+  <%    } %>
+</body>
+
+</html>
