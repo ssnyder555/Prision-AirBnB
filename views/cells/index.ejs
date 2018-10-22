@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Cells: This is your index page</h1>
+<% for ( let i = 0; i < cells.length; i++ ) { %>
+  <%= cells[i].name %> </br>
+<a href='/cells/<%=cells[i].id%>'>VIEW USER</a> </br>
+ <button type="click" value="submit">View Cells</button>ç
+<% } %>
+</body>
+
+</html>

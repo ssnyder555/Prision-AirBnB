@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+<h1>Cell Page</h1>
+<%= cell.name %> </br>
+<form action="/cells/<%=cell.id%>?_method=DELETE" method="post">
+  <input type="submit" value="EMPTY CELL">
+</form>
+
+<form action='/cells/<%=cell.id%>/edit' method='GET'>
+  <input type="submit" value="EDIT CELL INFORMATION">
+</form>
+
+</body>
+
+</html>

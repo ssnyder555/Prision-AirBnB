@@ -7,15 +7,15 @@ const methoodOverride = require('method-override');
 require('./db/db');
 
 // Requiring the middle-ware can me tricky:
-// const cellControllers  = require('./controllers/cell');
+const cellControllers  = require('./controllers/cellsController');
 
 // make sure to require this before our controller
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methoodOverride('_method'));
 
-//setting up the middle-ware for our controllers
+// setting up the middle-ware for our controllers
 // where every route will start with /cells
-// app.use('/cells', cellsController);
+app.use('/cells', cellControllers);
 
 // this thing..? I forgot i need to no
 app.get('/', (req, res) => {
