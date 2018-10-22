@@ -8,11 +8,13 @@
 
 <body>
   <h1>Cell Information</h1>
-  <%=Cell.name%> </br>
-  <form action="/prisoners/<%=prisoner.id%>/edit" method="GET">
-    <input type="submit" value="EDIT CELL INFORMATION">
+  <%=cells.name%>
+
+  <form action="/cells/<%=cells.id%>?_method=PUT" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="SUBMIT">
   </form>
-  
+
 </body>
 
 </html>

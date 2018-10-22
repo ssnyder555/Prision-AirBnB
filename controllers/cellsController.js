@@ -77,18 +77,18 @@ router.get('/:id/edit', async (req, res) => {
  }
 });
 
-// // Change Edited Information
-// router.put('/:id', async (req, res) => {
-//  console.log(req.params.id, req.body);
-//  try {
-//
-//    await Cells.findByIdAndUpdate(req.params.id, req.body);
-//    res.redirect('/cells');
-//
-//  } catch (err) {
-//    res.send(err);
-//  }
-// })
+// Change Edited Information
+router.put('/:id', async (req, res) => {
+ console.log(req.params.id, req.body);
+ try {
+
+   await Cells.findByIdAndUpdate(req.params.id, req.body);
+   res.redirect('/cells');
+
+ } catch (err) {
+   res.send(err);
+ }
+})
 
 
 

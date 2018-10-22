@@ -8,11 +8,15 @@
 
 <body>
   <h1>Cells: This is your index page</h1>
+  <a href="/cells/new">CREATE NEW CELL</a> </br>
+  
 <% for ( let i = 0; i < cells.length; i++ ) { %>
+
   <%= cells[i].name %> </br>
-<a href='/cells/<%=cells[i].id%>'>VIEW USER</a> </br>
- <button type="click" value="submit">View Cells</button>ç
+<a href='/cells/<%=cells[i].id%>'>VIEW CELLS</a> </br>
+
 <% } %>
+
 </body>
 
 </html>
