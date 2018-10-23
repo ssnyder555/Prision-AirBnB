@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const Prisoner = require('../models/prisoners');
+const Auth = require('../models/auth');
 
 // Find All Priosners Objects
 router.get('/', async (req, res) => {
@@ -79,15 +80,21 @@ router.delete('/:id', async (req, res) => {
 // Render Edit Page
 
 router.get('/:id/edit', async (req, res) => {
-  try {
 
-    const prisonerFound = await Prisoner.findById(req.params.id);
-    res.render('./prisoners/edit.ejs', {
-      prisoner: prisonerFound
-    })
+  if (req.session.logged === true) {
+    try {
 
-  } catch (err) {
-    res.send(err);
+      const prisonerFound = await Prisoner.findById(req.params.id);
+      res.render('./prisoners/edit.ejs', {
+        prisoner: prisonerFound
+      })
+
+    } catch (err) {
+      res.send(err);
+    }
+  } else {
+    req.session.message = 'You have to be logged in to edit an author';
+    res.redirect('/auth/login');
   }
 });
 
