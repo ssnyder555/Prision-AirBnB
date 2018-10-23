@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const Prisoner = require('../models/prisoners');
 const Auth = require('../models/auth');
+const Cells = require('../models/cells');
 
 // Find All Priosners Objects
 router.get('/', async (req, res) => {
@@ -42,7 +43,16 @@ router.post('/', async (req, res) => {
 
     const prisonerCreated = await Prisoner.create(req.body);
     console.log(prisonerCreated);
+    const cell = await Cells.find({
+      name: prisonerCreated.crime
+    });
+    console.log(cell);
     res.redirect('/prisoners');
+
+    for (let i = 0; i < cell.length; i++) {
+      cell[i].prisoner.push(prisonerCreated);
+    }
+
 
   } catch (err) {
     res.send(err);

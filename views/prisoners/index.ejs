@@ -17,13 +17,7 @@
   <form action="/prisoners/new" method="get">
     <input type="submit" value="ADMIT PRISONER">
   </form> </br>
-  <select name="authorId">
-    <%for (let i = 0; i < prisoners.length; i++) {%>
-    <option value="<%=prisoners[i].id%>">
-      <%=prisoners[i].name%>
-    </option>
-    <%}%>
-  </select>
+
   <ul>
     <%    for( let i = 0; i < prisoners.length; i++ ) { %>
     <li>
