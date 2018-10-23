@@ -1,21 +1,41 @@
-// This is where we must Aquire:
-const express         = require('express');
-const app             = express();
-const bodyParser      = require('body-parser');
-const methoodOverride = require('method-override');
-// get the database talking:
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const multer = require('multer');
+const session = require('express-session');
+
+
+// require our database
 require('./db/db');
+
 
 // Requiring the middle-ware can me tricky:
 const cellControllers  = require('./controllers/cellsController');
+const prisonerController = require('./controllers/prisonersController');
+const authController = require('./controllers/authController');
 
-// make sure to require this before our controller
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(methoodOverride('_method'));
+
+app.use(session({
+  secret: 'This is some random secret string',
+  resave: false,
+  saveUninitialized: false
+}));
+
 
 // setting up the middle-ware for our controllers
 // where every route will start with /cells
+
+
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+app.use(methodOverride('_method'));
 app.use('/cells', cellControllers);
+app.use('/prisoners', prisonerController);
+app.use('/auth', authController);
+
 
 // this thing..? I forgot i need to no
 app.get('/', (req, res) => {

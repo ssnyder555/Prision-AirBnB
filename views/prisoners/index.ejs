@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Prisoners: This is your index page</h1>
+  <li><a href="/auth/logout">Logout</a></li>
+  <form action="/prisoners/prisonerS" method="POST">
+    <input type="text" name="name" placeholder="Search...">
+    <input type="submit" value="Submit">
+  </form>
+  </br>
+  <form action="/prisoners/new" method="get">
+    <input type="submit" value="ADMIT PRISONER">
+  </form> </br>
+  <select name="authorId">
+    <%for (let i = 0; i < prisoners.length; i++) {%>
+    <option value="<%=prisoners[i].id%>">
+      <%=prisoners[i].name%>
+    </option>
+    <%}%>
+  </select>
+  <ul>
+    <%    for( let i = 0; i < prisoners.length; i++ ) { %>
+    <li>
+      <%=    prisoners[i].name  %> </br>
+      <img src="<%=prisoners[i].picture%>" alt=""> </br>
+
+      <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
+        <input type="submit" name="" value="View Prisoner">
+      </form>
+    </li>
+    <%    } %>
+  </ul>
+</body>
+
+</html>
