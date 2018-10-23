@@ -2,7 +2,8 @@ const mongoose    = require('mongoose');
 
 const cellsSchema = new mongoose.Schema({
 
-  name: String
+  name: String,
+  capacity: Number
 
 });
 // numberOfPrisonCells: {
