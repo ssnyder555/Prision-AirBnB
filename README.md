@@ -1,10 +1,35 @@
-This is my prison App!
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: Building My/Our First Full-stack Application
 
-The user in mind is the clerk checking the prisoners in
+# Let Us book your next visit to Prison.
 
-the relationship is between the prisoners checking in and out of the remaining cells.
+## A little about the Product
 
-You can add new prisoners to your index. You can edit their info on behavior, race, age, time left on sentence from the clecrk side index
+- This app help the user understand:
+How many available cells the particular prison has,
+Can they fit more in?
 
-technology used:
-node.js JavaScript HTML css express mongoose MongoDB Method-override ejs Body-Parser Bcrypt Session 
+- What kind of inmate they are intaking:
+  Kind of criminal,
+  Duration of stay,
+  Can they be rehabilitated?
+
+
+## Technologies
+
+- Node.js
+- Express
+- EJS and HTML
+- CSS
+- JavaScript and JQuery
+- MongoDB and Mongoose
+
+## Example Routes
+- this is where we would put this....
+- maybe another here......
+- the last one here. forsure.....
+
+
+## MVP User Stories
+- "I Love this app!!!!",
+- "I use this every time I need to put another criminal away."
+- "Hacking this app was a blast! Got T-Nugs out same day!"

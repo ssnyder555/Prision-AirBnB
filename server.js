@@ -26,10 +26,12 @@ app.use(methodOverride('_method'));
 app.use('/prisoners', prisonerController);
 app.use('/auth', authController);
 
+// this thing..? I forgot i need to no
 app.get('/', (req, res) => {
   res.send('This is my Prison App')
 });
 
+// The whole thing listens through here:
 app.listen(3000, () => {
   console.log('Listening on port 3000')
 });
