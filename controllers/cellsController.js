@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const Cells = require('../models/cells');
-
+const Prisoners = require('../models/prisoners');
 // Find All Priosners Objects
 router.get('/', async (req, res) => {
   try {
@@ -19,8 +19,10 @@ router.get('/', async (req, res) => {
 router.get('/update', async (req, res) => {
   try {
     const cellsFound = await Cells.find({});
+    const prisonersFound = await Prisoners.find({});
     res.render('./cells/updateCells.ejs', {
-      cells: cellsFound
+      cells: cellsFound,
+      prisoners: prisonersFound
 
     });
   } catch (err) {

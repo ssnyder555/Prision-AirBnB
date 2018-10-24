@@ -46,12 +46,15 @@ router.post('/', async (req, res) => {
     const cell = await Cells.find({
       name: prisonerCreated.crime
     });
-    console.log(cell);
-    res.redirect('/prisoners');
 
     for (let i = 0; i < cell.length; i++) {
       cell[i].prisoner.push(prisonerCreated);
+      cell[i].save((err, data) => {
+        res.redirect('/prisoners');
+      });
     }
+    console.log(cell);
+
 
 
   } catch (err) {
