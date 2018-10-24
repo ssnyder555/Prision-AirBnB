@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <%  for ( let i = 0; i < cells.length; i++ ) { %>
+  <form action="/cells/<%=cells[i].id%>?_method=PUT" method="post">
+    Cell # Name <input type="text" name="name"> </br>
+    Capacity: <input type="number" name="capacity"> </br>
+    <input type="submit" value="Submit">
+  </form>
+  <%  } %>
+
+</body>
+
+</html>

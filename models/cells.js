@@ -1,9 +1,10 @@
-const mongoose    = require('mongoose');
-
+const mongoose = require('mongoose');
+const Prisoner = require('./prisoners')
 const cellsSchema = new mongoose.Schema({
 
   name: String,
-  capacity: Number
+  capacity: Number,
+  prisoner: [Prisoner.schema],
 
 });
 // numberOfPrisonCells: {
