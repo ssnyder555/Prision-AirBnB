@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
-const express = require('express');
-const router = express.Router();
+const express  = require('express');
+const router   = express.Router();
 const Prisoner = require('../models/prisoners');
-const Auth = require('../models/auth');
+const Auth     = require('../models/auth');
 
 // Find All Priosners Objects
 router.get('/', async (req, res) => {
-  try {
-
+        try {
+          
     const prisonersFound = await Prisoner.find({});
     res.render('./prisoners/index.ejs', {
       prisoners: prisonersFound

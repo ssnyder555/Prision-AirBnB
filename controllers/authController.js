@@ -1,11 +1,8 @@
-const express = require('express');
+const express  = require('express');
 const mongoose = require('mongoose');
-const router = express.Router();
-const Auth = require('../models/auth');
-const bcrypt = require('bcrypt');
-
-
-
+const router   = express.Router();
+const Auth     = require('../models/auth');
+const bcrypt   = require('bcrypt');
 
 router.get('/login', (req, res) => {
 
@@ -25,7 +22,7 @@ router.post('/register', async (req, res) => {
   console.log(passwordHash)
 
   // Create an object to put into our database into the User Model
-  const userEntry = {};
+  const userEntry    = {};
   userEntry.username = req.body.username;
   userEntry.password = passwordHash;
 
@@ -33,7 +30,7 @@ router.post('/register', async (req, res) => {
   console.log(user);
   // initializing the session here
   // req.session.username = req.body.username;
-  req.session.logged = true;
+  req.session.logged  = true;
   req.session.message = '';
   res.redirect('/prisoners');
 });
@@ -48,7 +45,8 @@ router.post('/login', async (req, res) => {
     });
     console.log(foundUser)
 
-    if (foundUser) {
+    if (foundUser) {hu
+
       // if the users exists use the bcrypt compare password
       //to make sure the passwords match
       if (bcrypt.compareSync(req.body.password, foundUser.password)) {
