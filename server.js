@@ -11,11 +11,12 @@ require('./db/db');
 
 
 // Requiring the middle-ware can me tricky:
-const cellControllers  = require('./controllers/cellsController');
+const cellControllers = require('./controllers/cellsController');
 const prisonerController = require('./controllers/prisonersController');
 const authController = require('./controllers/authController');
 
 
+app.use(express.static('public'));
 app.use(session({
   secret: 'This is some random secret string',
   resave: false,

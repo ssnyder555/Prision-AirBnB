@@ -7,20 +7,24 @@
 </head>
 
 <body>
-  <h1>Cell Page</h1>
-  <%= cell.name %> </br>
+  <h1>
+    <%= cell.name %> Crime Cell</h1>
+  </br>
   <h3> Capacity:
-    <%=cell.capacity%>
+    <%=cell.capacity - cell.prisoner.length%>
   </h3>
   <h4>Prisoners</h4> </br>
-  <%= console.log(cell); %>
   <%  for ( let i = 0; i < cell.prisoner.length; i++ ) { %>
-  <%= cell.prisoner[i].name %> </br>
+  <a href="/prisoners/<%=cell.prisoner[i].id%>">
+    <%= cell.prisoner[i].name %></a> </br>
+  <img src="<%=cell.prisoner[i].picture%>"> </br>
   <%    } %>
-  <h2>HELLO</h2>
+
+  </br>
+  </br>
 
   <form action="/cells/<%=cell.id%>?_method=DELETE" method="post">
-    <input type="submit" value="EMPTY CELL">
+    <input type="submit" value="Delete Cell">
   </form>
 
   <form action='/cells/<%=cell.id%>/edit' method='GET'>

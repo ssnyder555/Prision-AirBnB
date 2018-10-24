@@ -1,35 +1,69 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
 </head>
 
-<body>
-  <h1>Prisoners: This is your index page</h1>
-  <li><a href="/auth/logout">Logout</a></li>
-  <form action="/prisoners/prisonerS" method="POST">
-    <input type="text" name="name" placeholder="Search...">
-    <input type="submit" value="Submit">
-  </form>
-  </br>
-  <form action="/prisoners/new" method="get">
-    <input type="submit" value="ADMIT PRISONER">
-  </form> </br>
+<div class="container-fluid">
 
-  <ul>
-    <%    for( let i = 0; i < prisoners.length; i++ ) { %>
-    <li>
-      <%=    prisoners[i].name  %> </br>
-      <img src="<%=prisoners[i].picture%>" alt=""> </br>
 
-      <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
-        <input type="submit" name="" value="View Prisoner">
-      </form>
-    </li>
-    <%    } %>
-  </ul>
-</body>
+  <body>
+
+
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/auth/logout">Logout</a>
+      </li>
+    </ul>
+    <h1>Prisoners: This is your index page</h1>
+
+
+
+    <form action="/prisoners/prisonerS" method="POST">
+      <input type="text" name="name" placeholder="Search...">
+      <input type="submit" value="Submit">
+    </form>
+    </br>
+    <form action="/prisoners/new" method="get">
+      <button type="input" class="btn btn-warning">ADMIT NEW PRISONER</button>
+    </form> </br>
+
+    <ul>
+      <%    for( let i = 0; i < prisoners.length; i++ ) { %>
+      <li>
+        <%=    prisoners[i].name  %> </br>
+        <img src="<%=prisoners[i].picture%>" alt=""> </br>
+
+        <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
+          <input type="submit" name="" value="View Prisoner">
+        </form>
+      </li>
+      <%    } %>
+    </ul>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</div>
 
 </html>

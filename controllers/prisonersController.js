@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
-const express  = require('express');
-const router   = express.Router();
+const express = require('express');
+const router = express.Router();
 const Prisoner = require('../models/prisoners');
 const Auth = require('../models/auth');
 const Cells = require('../models/cells');
 
 // Find All Priosners Objects
 router.get('/', async (req, res) => {
-        try {
-          
+  try {
+
     const prisonersFound = await Prisoner.find({});
     res.render('./prisoners/index.ejs', {
       prisoners: prisonersFound
@@ -82,7 +82,24 @@ router.get('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
 
-    await Prisoner.findByIdAndRemove(req.params.id);
+    const deletedPrisoner = await Prisoner.findByIdAndRemove(req.params.id);
+
+    const prisonerCell = await Cells.find({
+      name: deletedPrisoner.crime
+    });
+
+    for (let i = 0; i < prisonerCell.length; i++) {
+
+      for (let k = 0; k < prisonerCell[i].prisoner.length; k++) {
+
+        if (prisonerCell[i].prisoner[k]._id.toString() === deletedPrisoner._id.toString()) {
+          prisonerCell[i].prisoner.splice(k, 1);
+          prisonerCell[i].save();
+        }
+      }
+    }
+
+    console.log(prisonerCell);
     res.redirect('/prisoners');
 
   } catch (err) {
