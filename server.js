@@ -40,7 +40,7 @@ app.use('/auth', authController);
 
 // this thing..? I forgot i need to no
 app.get('/', (req, res) => {
-  res.send('This is my Prison App')
+  res.render('index.ejs');
 });
 
 // The whole thing listens through here:
