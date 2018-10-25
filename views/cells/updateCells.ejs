@@ -16,13 +16,15 @@
       <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
     </li>
   </ul>
-  <%  for ( let i = 0; i < cells.length; i++ ) { %>
-  <form action="/cells/<%=cells[i].id%>?_method=PUT" method="post">
-    Cell # Name <input type="text" name="name"> </br>
-    Capacity: <input type="number" name="capacity"> </br>
-    <input type="submit" value="Submit">
-  </form>
-  <%  } %>
+  <div class="container">
+    <%  for ( let i = 0; i < cells.length; i++ ) { %>
+    <form action="/cells/<%=cells[i].id%>?_method=PUT" method="post">
+      Cell # Name <input type="text" name="name"> </br>
+      Capacity: <input type="number" name="capacity"> </br>
+      <input type="submit" value="Submit">
+    </form>
+    <%  } %>
+  </div>
 
 </body>
 

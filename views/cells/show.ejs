@@ -16,26 +16,27 @@
       <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
     </li>
   </ul>
-  <h1>
-    <%= cell.name %> Crime Cell</h1>
-  </br>
-  <h3> Capacity:
-    <%=cell.capacity - cell.prisoner.length%>
-  </h3>
-  <h4>Prisoners</h4> </br>
-  <%  for ( let i = 0; i < cell.prisoner.length; i++ ) { %>
-  <a href="/prisoners/<%=cell.prisoner[i].id%>">
-    <%= cell.prisoner[i].name %></a> </br>
-  <img src="<%=cell.prisoner[i].picture%>"> </br>
-  <%    } %>
+  <div class="container">
+    <h1>
+      <%= cell.name %> Crime Cell</h1>
+    </br>
+    <h3> Capacity:
+      <%=cell.capacity - cell.prisoner.length%>
+    </h3>
+    <h4>Prisoners</h4> </br>
+    <%  for ( let i = 0; i < cell.prisoner.length; i++ ) { %>
+    <a href="/prisoners/<%=cell.prisoner[i].id%>">
+      <%= cell.prisoner[i].name %></a> </br>
+    <img src="<%=cell.prisoner[i].picture%>"> </br>
+    <%    } %>
 
-  </br>
-  </br>
+    </br>
+    </br>
 
-  <!-- <form action="/cells/<%=cell.id%>?_method=DELETE" method="post">
+    <!-- <form action="/cells/<%=cell.id%>?_method=DELETE" method="post">
     <input type="submit" value="Delete Cell">
   </form> -->
-
+  </div>
 
 </body>
 

@@ -8,18 +8,31 @@
 </head>
 
 <body>
-  <form action="/prisoners/<%=prisoner.id%>?_method=PUT" method="POST">
-    Name: <input type="text" name="name" value="<%=prisoner.name%>"> </br>
-    Age: <input type="text" name="age" value="<%=prisoner.age%>"> </br>
-    Crime: <input type="text" name="crime" value="<%=prisoner.crime%>"> </br>
-    Race: <input type="text" name="race" value="<%=prisoner.race%>"> </br>
-    Picture: <input type="text" name="picture" value="<%=prisoner.picture%>"> </br>
-    DurationOfStay: <input type="text" name="durationOfStay" value="<%=prisoner.durationOfStay%>"> </br>
-    Behavior: <input type="text" name="behavior" value="<%=prisoner.behavior%>"> </br>
-    CellNumber: <input type="text" name="cellNumber" value="<%=prisoner.cellNumber%>"> </br>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/cells">Cell Blocks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
+    </li>
+  </ul>
+  <div class="container">
+    <form action="/prisoners/<%=prisoner.id%>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="<%=prisoner.name%>"> </br>
+      Age: <input type="text" name="age" value="<%=prisoner.age%>"> </br>
+      Crime: <input type="text" name="crime" value="<%=prisoner.crime%>"> </br>
+      Race: <input type="text" name="race" value="<%=prisoner.race%>"> </br>
+      Picture: <input type="text" name="picture" value="<%=prisoner.picture%>"> </br>
+      DurationOfStay: <input type="text" name="durationOfStay" value="<%=prisoner.durationOfStay%>"> </br>
+      Behavior: <input type="text" name="behavior" value="<%=prisoner.behavior%>"> </br>
+      CellNumber: <input type="text" name="cellNumber" value="<%=prisoner.cellNumber%>"> </br>
 
-    <input type="submit" value="Submit">
-  </form>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 </body>
 
 </html>

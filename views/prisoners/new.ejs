@@ -9,24 +9,39 @@
 </head>
 
 <body>
-  <h1>Admit New Prisoner</h1>
-
-
-  <form class="" action="/prisoners" method="post">
-    Name: <input type="text" name="name" value=""> </br>
-    Age: <input type="text" name="age" value=""> </br>
-    Crime: <select type='crime' name="crime">
-      <option type='crime' value="Minor">Minor</option>
-      <option type='crime' value="Misdemeanor">Misdemeanor</option>
-      <option type='crime' value="Felony">Felony</option>
-    </select> </br>
-    Race: <input type="text" name="race" value=""> </br>
-    Picture: <input type="text" name="picture" value=""> </br>
-    DurationOfStay: <input type="text" name="durationOfStay" value=""> </br>
-    Behavior: <input type="text" name="behavior" value=""> </br>
-    CellNumber: <input type="text" name="cellNumber" value=""> </br>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/cells">Cell Blocks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
+    </li>
+  </ul>
+  <div class="container">
+    <h1>Admit New Prisoner</h1>
+    <form class="" action="/prisoners" method="post">
+      Name: <input type="text" name="name" value=""> </br>
+      Age: <input type="text" name="age" value=""> </br>
+      Crime: <select type='crime' name="crime">
+        <option type='crime' value="Minor">Minor</option>
+        <option type='crime' value="Misdemeanor">Misdemeanor</option>
+        <option type='crime' value="Felony">Felony</option>
+      </select> </br>
+      Race: <select type='race' name="race">
+        <option type='race' value="White">White</option>
+        <option type='race' value="Black">Black</option>
+        <option type='race' value="Other">Other</option>
+      </select> </br>
+      Picture: <input type="text" name="picture" value=""> </br>
+      DurationOfStay: <input type="text" name="durationOfStay" value=""> </br>
+      Behavior: <input type="text" name="behavior" value=""> </br>
+      CellNumber: <input type="text" name="cellNumber" value=""> </br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </body>
 
 </html>

@@ -20,21 +20,18 @@
       <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
     </li>
   </ul>
+  <div class="container">
+    <h1>Cells: This is your index page</h1> </br> </br>
 
-  <h1>Cells: This is your index page</h1>
-  <a href="/cells/new">CREATE NEW CELL</a> </br>
-  <form action="/cells/update" method="get">
-    <input type="submit" name="" value="Submit">
-  </form> </br> </br>
-  <% for ( let i = 0; i < cells.length; i++ ) { %>
+    <% for ( let i = 0; i < cells.length; i++ ) { %>
 
-  <h3>
-    <%= cells[i].name %> Cell Block
-  </h3></br>
-  <h5><a href='/cells/<%=cells[i].id%>'>VIEW CELL BLOCK</a></h5> </br> </br> </br> </br> </br>
+    <h3>
+      <%= cells[i].name %> Cell Block
+    </h3></br>
+    <h5><a href='/cells/<%=cells[i].id%>'>VIEW CELL BLOCK</a></h5> </br> </br> </br> </br> </br>
 
-  <% } %>
-
+    <% } %>
+  </div>
 </body>
 
 </html>

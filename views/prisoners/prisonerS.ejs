@@ -16,16 +16,18 @@
       <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
     </li>
   </ul>
-  <%    for( let i = 0; i < prisoners.length; i++ ) { %>
-  <li>
-    <%=    prisoners[i].name  %> </br>
-    <img src="<%=prisoners[i].picture%>" alt=""> </br>
+  <div class="container">
+    <%    for( let i = 0; i < prisoners.length; i++ ) { %>
+    <li>
+      <%=    prisoners[i].name  %> </br>
+      <img src="<%=prisoners[i].picture%>" alt=""> </br>
 
-    <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
-      <button type="input" class="btn btn-info">Show Prisoner Profile</button>
-    </form>
-  </li>
-  <%    } %>
+      <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
+        <button type="input" class="btn btn-info">Show Prisoner Profile</button>
+      </form>
+    </li>
+    <%    } %>
+  </div>
 </body>
 
 </html>

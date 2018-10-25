@@ -16,16 +16,18 @@
       <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
     </li>
   </ul>
-  <h1>Prisoner Information</h1>
-  <%=prisoner.name%> </br>
-  <%=prisoner.age%> </br> </br>
-  <img src="<%=prisoner.picture%>"> </br> </br>
-  <form action="/prisoners/<%=prisoner.id%>/edit" method="GET">
-    <button type="input" class="btn btn-info">EDIT PRISONER INFORMATION</button>
-  </form>
-  <form action="/prisoners/<%=prisoner.id%>?_method=DELETE" method="post">
-    <button type="input" class="btn btn-success">LET PRISONER GO</button>
-  </form>
+  <div class="container">
+    <h1>Prisoner Information</h1>
+    <%=prisoner.name%> </br>
+    <%=prisoner.age%> </br> </br>
+    <img src="<%=prisoner.picture%>"> </br> </br>
+    <form action="/prisoners/<%=prisoner.id%>/edit" method="GET">
+      <button type="input" class="btn btn-info">EDIT PRISONER INFORMATION</button>
+    </form>
+    <form action="/prisoners/<%=prisoner.id%>?_method=DELETE" method="post">
+      <button type="input" class="btn btn-success">LET PRISONER GO</button>
+    </form>
+  </div>
 </body>
 
 </html>
