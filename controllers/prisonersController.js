@@ -22,14 +22,20 @@ router.get('/', async (req, res) => {
 
 
 router.post('/prisonerS', (req, res) => {
-  console.log(req.body);
-  Prisoner.find({
-    name: req.body.name
-  }, (err, prisonerFound) => {
-    res.render('./prisoners/prisonerS.ejs', {
-      prisoners: prisonerFound
+
+  if (req.session.logged === true) {
+    console.log(req.body);
+    Prisoner.find({
+      name: req.body.name
+    }, (err, prisonerFound) => {
+      res.render('./prisoners/prisonerS.ejs', {
+        prisoners: prisonerFound
+      });
     });
-  });
+  } else {
+    req.session.message = 'You have to be logged in to edit an author';
+    res.redirect('/auth/login');
+  }
 })
 
 // Render New Form Page
@@ -80,30 +86,37 @@ router.get('/:id', async (req, res) => {
 // Delete Prisoner
 
 router.delete('/:id', async (req, res) => {
-  try {
 
-    const deletedPrisoner = await Prisoner.findByIdAndRemove(req.params.id);
+  if (req.session.logged === true) {
 
-    const prisonerCell = await Cells.find({
-      name: deletedPrisoner.crime
-    });
+    try {
 
-    for (let i = 0; i < prisonerCell.length; i++) {
+      const deletedPrisoner = await Prisoner.findByIdAndRemove(req.params.id);
 
-      for (let k = 0; k < prisonerCell[i].prisoner.length; k++) {
+      const prisonerCell = await Cells.find({
+        name: deletedPrisoner.crime
+      });
 
-        if (prisonerCell[i].prisoner[k]._id.toString() === deletedPrisoner._id.toString()) {
-          prisonerCell[i].prisoner.splice(k, 1);
-          prisonerCell[i].save();
+      for (let i = 0; i < prisonerCell.length; i++) {
+
+        for (let k = 0; k < prisonerCell[i].prisoner.length; k++) {
+
+          if (prisonerCell[i].prisoner[k]._id.toString() === deletedPrisoner._id.toString()) {
+            prisonerCell[i].prisoner.splice(k, 1);
+            prisonerCell[i].save();
+          }
         }
       }
+
+      console.log(prisonerCell);
+      res.redirect('/prisoners');
+
+    } catch (err) {
+      res.send(err);
     }
-
-    console.log(prisonerCell);
-    res.redirect('/prisoners');
-
-  } catch (err) {
-    res.send(err);
+  } else {
+    req.session.message = 'You have to be logged in to edit an author';
+    res.redirect('/auth/login');
   }
 });
 
@@ -112,6 +125,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/:id/edit', async (req, res) => {
 
   if (req.session.logged === true) {
+
     try {
 
       const prisonerFound = await Prisoner.findById(req.params.id);

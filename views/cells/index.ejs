@@ -9,6 +9,18 @@
 </head>
 
 <body>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/prisoners">Prisoners</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
+    </li>
+  </ul>
+
   <h1>Cells: This is your index page</h1>
   <a href="/cells/new">CREATE NEW CELL</a> </br>
   <form action="/cells/update" method="get">
@@ -16,8 +28,10 @@
   </form> </br> </br>
   <% for ( let i = 0; i < cells.length; i++ ) { %>
 
-  <%= cells[i].name %> </br>
-  <a href='/cells/<%=cells[i].id%>'>VIEW CELLS</a> </br> </br> </br> </br> </br>
+  <h3>
+    <%= cells[i].name %> Cell Block
+  </h3></br>
+  <h5><a href='/cells/<%=cells[i].id%>'>VIEW CELL BLOCK</a></h5> </br> </br> </br> </br> </br>
 
   <% } %>
 

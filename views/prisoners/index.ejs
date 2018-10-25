@@ -20,16 +20,13 @@
 
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link active" href="/">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="/cells">Cell Blocks</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="/auth/logout">Logout</a>
+        <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
       </li>
     </ul>
     <h1>Prisoners: This is your index page</h1>
@@ -38,7 +35,7 @@
 
     <form action="/prisoners/prisonerS" method="POST">
       <input type="text" name="name" placeholder="Search...">
-      <input type="submit" value="Submit">
+      <button type="input" class="btn btn-secondary">Submit</button>
     </form>
     </br>
     <form action="/prisoners/new" method="get">
@@ -52,8 +49,8 @@
         <img src="<%=prisoners[i].picture%>" alt=""> </br>
 
         <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
-          <input type="submit" name="" value="View Prisoner">
-        </form>
+          <button type="input" class="btn btn-info">Show Prisoner Profile</button>
+        </form> </br>
       </li>
       <%    } %>
     </ul>
