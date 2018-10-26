@@ -35,4 +35,4 @@ Can they fit more in?
 - "Hacking this app was a blast! Got T-Nugs out same day!"
 
 ## Preview
-![alt text](images/register.png "Logo Title Text 1")
+![alt text](/images/register.png "Logo Title Text 1")
