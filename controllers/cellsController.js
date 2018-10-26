@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const Cells = require('../models/cells');
 const Prisoners = require('../models/prisoners');
+
+
 // Find All Priosners Objects
 router.get('/', async (req, res) => {
   try {
@@ -16,6 +18,8 @@ router.get('/', async (req, res) => {
     res.send(err);
   }
 });
+
+// Route to update each cell
 router.get('/update', async (req, res) => {
   try {
     const cellsFound = await Cells.find({});
@@ -62,18 +66,6 @@ router.delete('/:id', (req, res) => {
     res.redirect('/cells');
   });
 });
-// Delete Prisoner
-
-// router.delete('/:id', async (req, res) => {
-//  try {
-//
-//    await Cells.findByIdAndRemove(req.params.id);
-//    res.redirect('/cells');
-//
-//  } catch (err) {
-//    res.send(err);
-//  }
-// });
 
 // Render Edit Page
 

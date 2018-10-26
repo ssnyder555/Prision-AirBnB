@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 
 router.get('/login', (req, res) => {
 
-  // ON EVERY SINGLE ROUTE IN THE WHOLE ENTIRE APPLICATION
+
   // you have attached to req a new property called session
   res.render('./auth/login.ejs', {
     message: req.session.message
@@ -17,6 +17,7 @@ router.post('/register', async (req, res) => {
 
   // first thing we are going to store our password in variable
   const password = req.body.password;
+
   // Create our hash
   const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   console.log(passwordHash)

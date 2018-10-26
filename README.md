@@ -33,3 +33,6 @@ Can they fit more in?
 - "I Love this app!!!!",
 - "I use this every time I need to put another criminal away."
 - "Hacking this app was a blast! Got T-Nugs out same day!"
+
+## Preview
+![alt text](images/register.png "Logo Title Text 1")

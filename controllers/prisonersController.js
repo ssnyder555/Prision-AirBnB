@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 
-
+// Search Bar Route To Search Prisoner By Name
 router.post('/prisonerS', (req, res) => {
 
   if (req.session.logged === true) {
