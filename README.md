@@ -29,10 +29,8 @@ Can they fit more in?
 
 
 ## Example Routes
-- this is where we would put this....
-- maybe another here......
-- the last one here. forsure.....
-
+- /prisoners
+- /cells
 
 ## MVP User Stories
 - "I Love this app!!!!",
