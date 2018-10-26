@@ -45,11 +45,11 @@ Can they fit more in?
 
 ### Prisoner Pages
 ![alt text](/images/admitPrisoner.png "Logo Title Text 1")
-![alt text](/images/prisonerIndex.png "Logo Title Text 1")
+![alt text](/images/prisonersIndex.png "Logo Title Text 1")
 ![alt text](/images/prisonerSearch.png "Logo Title Text 1")
-![alt text](/images/prisonerShow.png "Logo Title Text 1")
+![alt text](/images/prisonersShow.png "Logo Title Text 1")
 ![alt text](/images/editPrisoner.png "Logo Title Text 1")
 
 ### Cell Pages
 ![alt text](/images/cellsIndex.png "Logo Title Text 1")
-![alt text](/images/cellsShow.png "Logo Title Text 1") 
+![alt text](/images/cellsShow.png "Logo Title Text 1")
