@@ -16,8 +16,7 @@ const cellControllers = require('./controllers/cellsController');
 const prisonerController = require('./controllers/prisonersController');
 const authController = require('./controllers/authController');
 
-// connect public folder to use css and bootstrap
-app.use(express.static('public'));
+
 
 // use app.session to control login / logout sessions
 app.use(session({
@@ -33,10 +32,14 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(methodOverride('_method'));
 
-// 
+//
 app.use('/cells', cellControllers);
 app.use('/prisoners', prisonerController);
 app.use('/auth', authController);
+
+// connect public folder to use css and bootstrap
+app.use(express.static('public'));
+
 
 
 // this thing..? I forgot i need to no

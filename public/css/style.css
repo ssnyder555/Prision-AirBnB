@@ -1,3 +1,11 @@
-html {
-  background: black;
+.nav {
+  position: sticky;
+  top: 0;
+}
+
+/* #doughnutChart {
+  border: solid black 2px;
+} */
+#myChart {
+  border: solid grey 2px;
 }

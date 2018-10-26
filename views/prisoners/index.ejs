@@ -9,8 +9,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <title>Hello, world!</title>
+  <title>Prisoners</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 
@@ -48,16 +49,16 @@
     <ul class="row">
 
       <%    for( let i = 0; i < prisoners.length; i++ ) { %>
-      <li class="col-4">
+      <div class="col-4">
         <%=    prisoners[i].name  %> </br>
-        <img src="<%=prisoners[i].picture%>" alt=""> </br>
+        <img src="<%=prisoners[i].picture%>" style="width:170px;" alt=""> </br>
         <%= prisoners[i].race %>
 
 
         <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
           <button type="input" class="btn btn-info">Show Prisoner Profile</button>
         </form> </br>
-      </li>
+      </div>
       <%    } %>
     </ul>
   </div>

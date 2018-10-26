@@ -19,9 +19,14 @@ Can they fit more in?
 - Node.js
 - Express
 - EJS and HTML
+- Express-session
+- Bcrypt
+- Bootstrap
 - CSS
 - JavaScript and JQuery
 - MongoDB and Mongoose
+- Graph.js
+
 
 ## Example Routes
 - this is where we would put this....
