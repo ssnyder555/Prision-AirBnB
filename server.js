@@ -63,5 +63,5 @@ app.get('/', async (req, res) => {
 
 // The whole thing listens through here:
 app.listen(PORT, () => {
-  console.log(`Listening on port: ${PORT}`);
+  console.log('Server listening on port ' + PORT);
 });
