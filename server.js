@@ -40,6 +40,9 @@ app.use('/auth', authController);
 // connect public folder to use css and bootstrap
 app.use(express.static('public'));
 
+app.get('/about', (req, res) => {
+  res.render('about.ejs');
+});
 
 
 // this thing..? I forgot i need to no

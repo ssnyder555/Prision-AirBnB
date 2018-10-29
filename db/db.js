@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
+const mongoDbUrl = process.env.MONGODB_URI || 'mongodb://localhost/waxxy';
+
 const connectionString = 'mongodb://localhost/prision1';
 
-mongoose.connect(connectionString, {
+mongoose.connect(mongoDbUrl, {
   useNewUrlParser: true
 });
 

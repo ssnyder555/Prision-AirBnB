@@ -30,39 +30,15 @@
       <a class="nav-link disabled" href="/auth/logout">Login / Logout</a>
     </li>
   </ul>
+
   <div class="container">
-    <h1>Prisoners: <small>This is your index page</small></h1>
+    <h1>About: <small>The Developer</small></h1>
 
+    <p class='lead'>My name is Mirza. </p>
+    <p>I created this app to help make it easier for prison clerks to manage their prisoners information in an app that is easier to use, fast and <mark>profieceint.</mark></p>
 
-
-    <form action="/prisoners/prisonerS" method="POST">
-      <input type="text" name="name" placeholder="Search...">
-      <button type="input" class="btn btn-secondary">Submit</button>
-    </form>
-    </br>
-
-    <!-- ADMIT NEW PRISONER BUTTON -->
-    <a href="/prisoners/new" class='btn btn-warning' role='button'>ADMIT NEW PRISONER</a>
-    </br>
-
-
-
-    <ul class="row">
-
-      <%    for( let i = 0; i < prisoners.length; i++ ) { %>
-      <div class="col-4 grid">
-        <%=    prisoners[i].name  %> </br>
-        <img src="<%=prisoners[i].picture%>" style="width:170px;" alt=""> </br>
-        <%= prisoners[i].race %>
-
-
-        <form action="/prisoners/<%=prisoners[i].id%>" method="GET">
-          <button type="input" class="btn btn-info">Show Prisoner Profile</button>
-        </form> </br>
-      </div>
-      <%    } %>
-    </ul>
   </div>
+
   <!-- Content here -->
 
 

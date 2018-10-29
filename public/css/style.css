@@ -9,3 +9,10 @@
 #myChart {
   border: solid grey 2px;
 }
+
+.grid {
+  /* background-color: black; */
+  /* color: white; */
+  border: solid 2px black;
+  align-items: center;
+}
