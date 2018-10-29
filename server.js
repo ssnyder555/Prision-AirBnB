@@ -6,7 +6,7 @@ const multer = require('multer');
 const session = require('express-session');
 const Cells = require('./models/cells');
 const Prisoners = require('./models/prisoners');
-
+const PORT = process.env.PORT || 3000;
 // require our database
 require('./db/db');
 
@@ -62,6 +62,6 @@ app.get('/', async (req, res) => {
 });
 
 // The whole thing listens through here:
-app.listen(3000, () => {
-  console.log('Listening on port 3000')
+app.listen(PORT, () => {
+  console.log(`Listening on port: ${PORT}`);
 });
